@@ -22,7 +22,7 @@ void gui::setup(){
     gui_panel.add(alphaValue.set("alphaValue", 0.05, 0.01, 0.1));
     gui_panel.add(movementThreshold.set("movementThreshold", 10, 0, 100 ));
     gui_panel.add(flickerThreshold.set("flickerThreshold", 10, 0, 100 ));
-    gui_panel.add(farThreshold.set("farThreshold", 100, 0, 255 ));
+    gui_panel.add(farThreshold.set("far_threshold", 100, 0, 255 ));
     
     gui_panel.add(rot_x.set("rot_x", -20,-360,360));
     gui_panel.add(xOffset.set("xOffset", -20, -100,100));

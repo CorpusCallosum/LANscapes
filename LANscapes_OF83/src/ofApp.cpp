@@ -42,7 +42,7 @@ void ofApp::setup(){
     
     gui.setUpSpeed(XML.getValue("group:soundUpSpeed", .00000001));
     gui.setDownSpeed(XML.getValue("group:soundDownSpeed", .001));
-    saveHour = ofToInt(XML.getValue("group:save_hour", "18"));
+   // saveHour = ofToInt(XML.getValue("group:save_hour", "18"));
     
     //Set this to FALSE to use webcam
     //TODO: add this to the XML file
@@ -68,7 +68,7 @@ void ofApp::setup(){
     width =  600;
     height = 480;
     extrusionAmount = gui.getExtrusion();
-    previousHour = ofGetHours();
+    previousHour = 666;
     
     
     
@@ -278,12 +278,23 @@ void ofApp::update(){
         
     }
     
-    //SAVE the mesh every hour
-    int hour = ofGetHours();
-    if( hour != previousHour && hour == saveHour )
-    { //save at 5pm every day
-        mainMesh.save();
-        previousHour = hour;
+    //SAVE the mesh
+    int currentHour = ofGetHours();
+    if( currentHour != previousHour){
+        cout<<"currentHour != previousHour"<<endl;
+        XML.pushTag("group");
+        XML.pushTag("save_times");
+        for (int i=0; i<XML.getNumTags("hour"); i++){
+            cout<<"current hour: "<<currentHour<<endl;
+            saveHour = ofToInt(XML.getValue("hour", "18", i));
+            cout<<"save hour: "<<saveHour<<endl<<endl;
+
+            if(currentHour == saveHour )
+                mainMesh.save();
+        }
+        XML.popTag();
+        XML.popTag();
+        previousHour = currentHour;
     }
     
     //get  data from gui
