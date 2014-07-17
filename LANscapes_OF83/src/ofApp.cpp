@@ -38,7 +38,7 @@ void ofApp::setup(){
     gui.mirrorV = XML.getValue("group:mirror_vertically", false);
     gui.mirrorH = XML.getValue("group:mirror_horizontally", false);
     
-    gui.setUpSpeed(XML.getValue("group:soundUpSpeed", .00000001));
+    gui.setUpSpeed(XML.getValue("group:soundUpSpeed", .0000000316));
     gui.setDownSpeed(XML.getValue("group:soundDownSpeed", .003));
    // saveHour = ofToInt(XML.getValue("group:save_hour", "18"));
     

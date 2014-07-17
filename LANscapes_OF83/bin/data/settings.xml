@@ -17,7 +17,7 @@
 	<colored_wireframe>0</colored_wireframe>
 	<mirror_horizontally>1</mirror_horizontally>
 	<mirror_vertically>0</mirror_vertically>
-	<soundUpSpeed>3e-08</soundUpSpeed>
+	<soundUpSpeed>3.16e-08</soundUpSpeed>
 	<soundDownSpeed>0.0035</soundDownSpeed>
 	<save_times>
 		<hour>0</hour>
