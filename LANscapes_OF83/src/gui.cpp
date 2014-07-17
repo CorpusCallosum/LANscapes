@@ -34,8 +34,8 @@ void gui::setup(){
     gui_panel.add(bColorWireframe.setup("colored wireframe", false));
     gui_panel.add(mirrorH.setup("mirror horizontally", false));
     gui_panel.add(mirrorV.setup("mirror vertically", false));
-    gui_panel.add(soundUpSpeed.set("soundUpSpeed", .0000001, .00000000001, .00001));
-    gui_panel.add(soundDownSpeed.set("soundDownSpeed", .001, .0001, .01));
+    gui_panel.add(soundUpSpeed.set("soundUpSpeed", .00000003, .00000000001, .00001));
+    gui_panel.add(soundDownSpeed.set("soundDownSpeed", .003, .0001, .01));
     
     hidden = true;
     ofHideCursor();

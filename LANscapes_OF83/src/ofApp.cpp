@@ -152,18 +152,17 @@ void ofApp::setup(){
         sound[ 2 ]->loadSound( "sounds/iceburg_6_14.aiff" );
         
         corners[ 0 ].set( 0.0, 0.0 ); //top left
-        corners[ 1 ].set( 147.0, 0.0 );
-        corners[ 2 ].set( 660.0, 0.0 );
+        corners[ 1 ].set( 120.0, 0.0 );
+        corners[ 2 ].set( 743.0, 0.0 );
         corners[ 3 ].set( 800.0, 0.0 ); //top right
-        corners[ 4 ].set( 800.0, 210.0 );
-        corners[ 5 ].set( 800.0, 1080.0 );
+        corners[ 4 ].set( 800.0, 195.0 );
+        corners[ 5 ].set( 800.0, 1084.0 );
         corners[ 6 ].set( 800.0, 1280.0 ); //bottom right
-        corners[ 7 ].set( 660.0, 1280.0 );
-        corners[ 8 ].set( 147.0, 1280.0 );
+        corners[ 7 ].set( 717.0, 1280.0 );
+        corners[ 8 ].set( 94.0, 1280.0 );
         corners[ 9 ].set( 0.0, 1280.0 ); //bottom left
-        corners[ 10 ].set( 0.0, 1080.0 );
-        corners[ 11].set( 0.0, 210.0 );
-        
+        corners[ 10 ].set( 0.0, 1079.0 );
+        corners[ 11].set( 0.0, 176.0 );
     }
     
     if ( whichOne == 2 ) { //south
@@ -177,16 +176,16 @@ void ofApp::setup(){
         
         corners[ 0 ].set( 0.0, 0.0 ); //top left
         corners[ 1 ].set( 147.0, 0.0 );
-        corners[ 2 ].set( 660.0, 0.0 );
+        corners[ 2 ].set( 748.0, 0.0 );
         corners[ 3 ].set( 800.0, 0.0 ); //top right
-        corners[ 4 ].set( 800.0, 210.0 );
-        corners[ 5 ].set( 800.0, 1080.0 );
+        corners[ 4 ].set( 800.0, 197.0 );
+        corners[ 5 ].set( 800.0, 1061.0 );
         corners[ 6 ].set( 800.0, 1280.0 ); //bottom right
-        corners[ 7 ].set( 660.0, 1280.0 );
+        corners[ 7 ].set( 752.0, 1280.0 );
         corners[ 8 ].set( 147.0, 1280.0 );
         corners[ 9 ].set( 0.0, 1280.0 ); //bottom left
-        corners[ 10 ].set( 0.0, 1080.0 );
-        corners[ 11].set( 0.0, 210.0 );
+        corners[ 10 ].set( 0.0, 1062.0 );
+        corners[ 11].set( 0.0, 193.0 );
         
     }
     
@@ -486,30 +485,30 @@ void ofApp::keyPressed(int key){
             
         case 'l':
             //save the mesh and color data
-            corners[ 4 ].y ++;
-            mask[ 0 ].update( corners[ 0 ], corners[ 3 ], corners[ 4 ], corners[ 11 ] );
-            cout << "4 y: " << corners[ 4 ].y << endl;
+            corners[ 10 ].y ++;
+            mask[ 2 ].setup( corners[ 10 ], corners[ 5 ], corners[ 6 ], corners[ 9 ] );
+            cout << "10 y: " << corners[ 10 ].y << endl;
 			break;
             
         case 'j':
             //save the mesh and color data
-            corners[ 4 ].y ++;
-            mask[ 0 ].update( corners[ 0 ], corners[ 3 ], corners[ 4 ], corners[ 11 ] );
-            cout << "4 y: " << corners[ 4 ].y << endl;
+            corners[ 10 ].y --;
+           mask[ 2 ].setup( corners[ 10 ], corners[ 5 ], corners[ 6 ], corners[ 9 ] );
+            cout << "10 y: " << corners[ 10 ].y << endl;
 			break;
             
         case 'i':
             //save the mesh and color data
-            corners[ 11 ].y ++;
-            mask[ 0 ].update( corners[ 0 ], corners[ 3 ], corners[ 4 ], corners[ 11 ] );
-            cout << "11 y: " << corners[ 11 ].y << endl;
+            corners[ 5 ].y ++;
+            mask[ 2 ].setup( corners[ 10 ], corners[ 5 ], corners[ 6 ], corners[ 9 ] );
+            cout << "5 y: " << corners[ 5 ].y << endl;
 			break;
             
         case 'm':
             //save the mesh and color data
-            corners[ 11 ].y ++;
-            mask[ 0 ].update( corners[ 0 ], corners[ 3 ], corners[ 4 ], corners[ 11 ] );
-            cout << "11 y: " << corners[ 11 ].y << endl;
+            corners[ 5 ].y --;
+            mask[ 2 ].setup( corners[ 10 ], corners[ 5 ], corners[ 6 ], corners[ 9 ] );
+            cout << "5 y: " << corners[ 5 ].y << endl;
 			break;
             
 	}
