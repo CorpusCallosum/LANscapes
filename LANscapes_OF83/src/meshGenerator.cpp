@@ -16,6 +16,7 @@ void meshGenerator::setup( int w, int h, float extrusion, bool wireframe, bool f
     xOffset=0;
     zOffset = -4;
     yOffset = -23;
+    minNoise = 202;
     
     colorGrid.resize( width * height );
     
@@ -74,10 +75,10 @@ ofVboMesh meshGenerator::update( ofxCvGrayscaleImage img, float extrusion, bool 
             
             float a = x * .7;
             float b = y * .7;
-            float c = ofGetFrameNum() / 120.0;
+            float c = ofGetFrameNum() / 150.0;
             
             float noise = ofNoise( a, b, c ) * 255;
-            float color = noise < 210  ? ofMap( noise, 0, 210, 210, 255 ) : 210;
+            float color = noise < minNoise  ? ofMap( noise, 0, minNoise, minNoise, 255 ) : minNoise;
             
             noiseImage.getPixels()[ y * width + x ] = color;
         }

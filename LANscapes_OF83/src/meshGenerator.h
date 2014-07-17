@@ -38,6 +38,8 @@ public:
     
     ofImage noiseImage;
     
+    int minNoise;
+    
 	
 };
 

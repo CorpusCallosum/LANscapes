@@ -26,8 +26,8 @@ void soundCalculations::setup( int w, int h, int which, int n, float u, float d 
         soundCenter[ 1 ].set( 340.0, 600.0 );
         soundCenter[ 2 ].set( 540.0, 100.0 );
 
-        soundRadius[ 0 ] = 450;
-        soundRadius[ 1 ] = 306;
+        soundRadius[ 0 ] = 550;
+        soundRadius[ 1 ] = 406;
         soundRadius[ 2 ] = 456;
     }
     
@@ -36,9 +36,9 @@ void soundCalculations::setup( int w, int h, int which, int n, float u, float d 
         soundCenter[ 1 ].set( 300.0, -120.0 );
         soundCenter[ 2 ].set( 100.0, 380.0 );
         
-        soundRadius[ 0 ] = 383;
-        soundRadius[ 1 ] = 306;
-        soundRadius[ 2 ] = 456;
+        soundRadius[ 0 ] = 583;
+        soundRadius[ 1 ] = 406;
+        soundRadius[ 2 ] = 356;
     }
     
     soundPan.resize( numSounds );
