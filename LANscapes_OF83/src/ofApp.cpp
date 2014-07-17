@@ -134,7 +134,7 @@ void ofApp::setup(){
     //sound setup
     //soundCalculations.setup( width, height );
     
-    whichOne = 1;
+    whichOne = 1; //1 is north, 2 is south
     numSounds = 3;
     volume.resize( numSounds );
     pan.resize( numSounds );
@@ -145,24 +145,24 @@ void ofApp::setup(){
     if ( whichOne == 1 ) { //north
         
         sound[ 0 ] = new ofSoundPlayer;
-        sound[ 0 ]->loadSound( "sounds/bio_6_30.aiff" );
+        sound[ 0 ]->loadSound( "sounds/popaea_7_00.aiff" );
         sound[ 1 ] = new ofSoundPlayer;
-        sound[ 1 ]->loadSound( "sounds/popaea_7_00.aiff" );
+        sound[ 1 ]->loadSound( "sounds/iceburg_6_14.aiff" );
         sound[ 2 ] = new ofSoundPlayer;
-        sound[ 2 ]->loadSound( "sounds/iceburg_6_14.aiff" );
+        sound[ 2 ]->loadSound( "sounds/bio_6_30.aiff" );
         
         corners[ 0 ].set( 0.0, 0.0 ); //top left
-        corners[ 1 ].set( 147.0, 0.0 );
-        corners[ 2 ].set( 660.0, 0.0 );
+        corners[ 1 ].set( 120.0, 0.0 );
+        corners[ 2 ].set( 743.0, 0.0 );
         corners[ 3 ].set( 800.0, 0.0 ); //top right
         corners[ 4 ].set( 800.0, 195.0 );
         corners[ 5 ].set( 800.0, 1084.0 );
         corners[ 6 ].set( 800.0, 1280.0 ); //bottom right
-        corners[ 7 ].set( 660.0, 1280.0 );
-        corners[ 8 ].set( 147.0, 1280.0 );
+        corners[ 7 ].set( 717.0, 1280.0 );
+        corners[ 8 ].set( 94.0, 1280.0 );
         corners[ 9 ].set( 0.0, 1280.0 ); //bottom left
-        corners[ 10 ].set( 0.0, 1080.0 );
-        corners[ 11].set( 0.0, 210.0 );
+        corners[ 10 ].set( 0.0, 1079.0 );
+        corners[ 11].set( 0.0, 176.0 );
         
     }
     
@@ -486,30 +486,29 @@ void ofApp::keyPressed(int key){
             
         case 'l':
             //save the mesh and color data
-            corners[ 4 ].y ++;
-            mask[ 0 ].update( corners[ 0 ], corners[ 3 ], corners[ 4 ], corners[ 11 ] );
-            cout << "4 y: " << corners[ 4 ].y << endl;
+            corners[ 1 ].x ++;
+            mask[ 3 ].update( corners[ 0 ], corners[ 1 ], corners[ 8 ], corners[ 9 ] );
+            cout << "1 x: " << corners[ 1 ].x << endl;
 			break;
             
         case 'j':
             //save the mesh and color data
-            corners[ 4 ].y ++;
-            mask[ 0 ].update( corners[ 0 ], corners[ 3 ], corners[ 4 ], corners[ 11 ] );
-            cout << "4 y: " << corners[ 4 ].y << endl;
+            corners[ 1 ].x --;
+            mask[ 3 ].update( corners[ 0 ], corners[ 1 ], corners[ 8 ], corners[ 9 ] );
+            cout << "1 x: " << corners[ 1 ].x << endl;
 			break;
             
         case 'i':
             //save the mesh and color data
-            corners[ 11 ].y ++;
-            mask[ 0 ].update( corners[ 0 ], corners[ 3 ], corners[ 4 ], corners[ 11 ] );
-            cout << "11 y: " << corners[ 11 ].y << endl;
-			break;
+            corners[ 8 ].x ++;
+            mask[ 3 ].update( corners[ 0 ], corners[ 1 ], corners[ 8 ], corners[ 9 ] );
+            cout << "8 x: " << corners[ 8 ].x << endl;            break;
             
         case 'm':
             //save the mesh and color data
-            corners[ 11 ].y ++;
-            mask[ 0 ].update( corners[ 0 ], corners[ 3 ], corners[ 4 ], corners[ 11 ] );
-            cout << "11 y: " << corners[ 11 ].y << endl;
+            corners[ 8 ].x --;
+            mask[ 3 ].update( corners[ 0 ], corners[ 1 ], corners[ 8 ], corners[ 9 ] );
+            cout << "8 x: " << corners[ 8 ].x << endl;
 			break;
             
 	}
