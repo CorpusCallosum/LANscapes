@@ -3,8 +3,6 @@
 //--------------------------------------------------------------
 void ofApp::setup(){
     
-    display.allocate(1280, 800);
-    
     //load settings xml data file
     //-----------
 	//the string is printed at the top of the app
@@ -142,7 +140,7 @@ void ofApp::setup(){
     pan.resize( numSounds );
     
     //masking rectangles
-    rectangle.resize( 4 );
+    mask.resize( 4 );
     
     if ( whichOne == 1 ) { //north
         
@@ -153,28 +151,18 @@ void ofApp::setup(){
         sound[ 2 ] = new ofSoundPlayer;
         sound[ 2 ]->loadSound( "sounds/iceburg_6_14.aiff" );
         
-        //top
-        rectangle[ 0 ].x = 0;
-        rectangle[ 0 ].y = 0;
-        rectangle[ 0 ].width = 800;
-        rectangle[ 0 ].height = 210;
-        
-        //right
-        rectangle[ 1 ].x = 751;
-        rectangle[ 1 ].y = 0;
-        rectangle[ 1 ].width = 140;
-        rectangle[ 1 ].height = 1280;
-        
-        //bottom
-        rectangle[ 2 ].x = 0;
-        rectangle[ 2 ].y = 1059;
-        rectangle[ 2 ].width = 800;
-        rectangle[ 2 ].height = 200;
-        
-        rectangle[ 3 ].x = 0;
-        rectangle[ 3 ].y = 0;
-        rectangle[ 3 ].width = 147;
-        rectangle[ 3 ].height = 1280;
+        corners[ 0 ].set( 0.0, 0.0 ); //top left
+        corners[ 1 ].set( 147.0, 0.0 );
+        corners[ 2 ].set( 660.0, 0.0 );
+        corners[ 3 ].set( 800.0, 0.0 ); //top right
+        corners[ 4 ].set( 800.0, 210.0 );
+        corners[ 5 ].set( 800.0, 1080.0 );
+        corners[ 6 ].set( 800.0, 1280.0 ); //bottom right
+        corners[ 7 ].set( 660.0, 1280.0 );
+        corners[ 8 ].set( 147.0, 1280.0 );
+        corners[ 9 ].set( 0.0, 1280.0 ); //bottom left
+        corners[ 10 ].set( 0.0, 1080.0 );
+        corners[ 11].set( 0.0, 210.0 );
         
     }
     
@@ -187,28 +175,19 @@ void ofApp::setup(){
         sound[ 2 ] = new ofSoundPlayer;
         sound[ 2 ]->loadSound( "sounds/bio_6_30.aiff" );
         
-        //top
-        rectangle[ 0 ].x = 0;
-        rectangle[ 0 ].y = 0;
-        rectangle[ 0 ].width = 800;
-        rectangle[ 0 ].height = 210;
+        corners[ 0 ].set( 0.0, 0.0 ); //top left
+        corners[ 1 ].set( 147.0, 0.0 );
+        corners[ 2 ].set( 660.0, 0.0 );
+        corners[ 3 ].set( 800.0, 0.0 ); //top right
+        corners[ 4 ].set( 800.0, 210.0 );
+        corners[ 5 ].set( 800.0, 1080.0 );
+        corners[ 6 ].set( 800.0, 1280.0 ); //bottom right
+        corners[ 7 ].set( 660.0, 1280.0 );
+        corners[ 8 ].set( 147.0, 1280.0 );
+        corners[ 9 ].set( 0.0, 1280.0 ); //bottom left
+        corners[ 10 ].set( 0.0, 1080.0 );
+        corners[ 11].set( 0.0, 210.0 );
         
-        //right
-        rectangle[ 1 ].x = 751;
-        rectangle[ 1 ].y = 0;
-        rectangle[ 1 ].width = 140;
-        rectangle[ 1 ].height = 1280;
-        
-        //bottom
-        rectangle[ 2 ].x = 0;
-        rectangle[ 2 ].y = 1059;
-        rectangle[ 2 ].width = 800;
-        rectangle[ 2 ].height = 200;
-        
-        rectangle[ 3 ].x = 0;
-        rectangle[ 3 ].y = 0;
-        rectangle[ 3 ].width = 147;
-        rectangle[ 3 ].height = 1280;
     }
     
     
@@ -224,9 +203,12 @@ void ofApp::setup(){
     soundUpSpeed = gui.getUpSpeed();
     soundDownSpeed = gui.getDownSpeed();
     
+    mask[ 0 ].setup( corners[ 0 ], corners[ 3 ], corners[ 4 ], corners[ 11 ] );
+    mask[ 1 ].setup( corners[ 2 ], corners[ 3 ], corners[ 6 ], corners[ 7 ] );
+    mask[ 2 ].setup( corners[ 10 ], corners[ 5 ], corners[ 6 ], corners[ 9 ] );
+    mask[ 3 ].setup( corners[ 0 ], corners[ 1 ], corners[ 8 ], corners[ 9 ] );
     
     processImage.setup( width, height, 10, 10, modifiedImage, whichOne, numSounds,soundUpSpeed, soundDownSpeed ); // (width, height, low threshold for movement, flicker);
-    
     
 }
 
@@ -337,12 +319,7 @@ void ofApp::update(){
 
 //--------------------------------------------------------------
 void ofApp::draw(){
-    
-    //draw everything to an FBO
-    // display.begin();
-    
-    // ofPushMatrix();
-    // ofRotateZ(90);
+
     
     ////DRAW THE MESH
 	//but we want to enable it to show the mesh
@@ -392,8 +369,7 @@ void ofApp::draw(){
     else {
         //draw the masks
         for ( int i = 0; i < 4; i ++ ) {
-            ofSetColor( 0, 0, 0 );
-            ofRect( rectangle[ i ] );
+            mask[ i ].draw();
         }
     }
     
@@ -402,9 +378,6 @@ void ofApp::draw(){
     ////DRAW THE GUI
     gui.draw();
     
-    //display.end();
-    //display.draw(0, 0);
-    //ofPopMatrix();
     
 }
 
@@ -513,26 +486,30 @@ void ofApp::keyPressed(int key){
             
         case 'l':
             //save the mesh and color data
-            rectangle[ 1 ].x ++;
-            cout << rectangle[ 1 ].x << endl;
+            corners[ 4 ].y ++;
+            mask[ 0 ].update( corners[ 0 ], corners[ 3 ], corners[ 4 ], corners[ 11 ] );
+            cout << "4 y: " << corners[ 4 ].y << endl;
 			break;
             
         case 'j':
             //save the mesh and color data
-            rectangle[ 1 ].x --;
-            cout << rectangle[ 1 ].x << endl;
+            corners[ 4 ].y ++;
+            mask[ 0 ].update( corners[ 0 ], corners[ 3 ], corners[ 4 ], corners[ 11 ] );
+            cout << "4 y: " << corners[ 4 ].y << endl;
 			break;
             
         case 'i':
             //save the mesh and color data
-            rectangle[ 3 ].width ++;
-            cout << rectangle[ 3 ].width << endl;
+            corners[ 11 ].y ++;
+            mask[ 0 ].update( corners[ 0 ], corners[ 3 ], corners[ 4 ], corners[ 11 ] );
+            cout << "11 y: " << corners[ 11 ].y << endl;
 			break;
             
         case 'm':
             //save the mesh and color data
-            rectangle[ 3 ].width --;
-            cout << rectangle[ 3 ].width << endl;
+            corners[ 11 ].y ++;
+            mask[ 0 ].update( corners[ 0 ], corners[ 3 ], corners[ 4 ], corners[ 11 ] );
+            cout << "11 y: " << corners[ 11 ].y << endl;
 			break;
             
 	}

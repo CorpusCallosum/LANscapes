@@ -10,6 +10,7 @@
 #include "gui.h"
 #include "ofxXmlSettings.h"
 #include "soundCalculations.h"
+#include "mask.h"
 
 class ofApp : public ofBaseApp{
 
@@ -65,8 +66,8 @@ public:
     vector <float>          speed;
     float                   soundUpSpeed, soundDownSpeed;
     int                     whichOne;
+
     
-    ofFbo                  display;
-    
-    vector <ofRectangle>    rectangle;
+    vector <mask>           mask;
+    ofVec2f                 corners[ 12 ]; //points that define masking polygons
 };

@@ -5,34 +5,34 @@
 	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
 	<false/>
 	<key>IDESourceControlProjectIdentifier</key>
-	<string>3DC69D91-1169-4BCD-82B6-384CDD626407</string>
+	<string>F3ABE46E-0857-44F5-B2B0-9476E9C23E15</string>
 	<key>IDESourceControlProjectName</key>
 	<string>LANscapes_OF83</string>
 	<key>IDESourceControlProjectOriginsDictionary</key>
 	<dict>
-		<key>2E0FA84C-F663-45F8-A063-1FF345353ED7</key>
-		<string>https://github.com/CorpusCallosum/LANscapes.git</string>
+		<key>09352632-5CD9-435F-B135-8420CB7F932A</key>
+		<string>https://github.com/CorpusCallosum/LANscapes</string>
 	</dict>
 	<key>IDESourceControlProjectPath</key>
 	<string>LANscapes_OF83/LANscapes_OF83.xcodeproj/project.xcworkspace</string>
 	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
 	<dict>
-		<key>2E0FA84C-F663-45F8-A063-1FF345353ED7</key>
+		<key>09352632-5CD9-435F-B135-8420CB7F932A</key>
 		<string>../../..</string>
 	</dict>
 	<key>IDESourceControlProjectURL</key>
-	<string>https://github.com/CorpusCallosum/LANscapes.git</string>
+	<string>https://github.com/CorpusCallosum/LANscapes</string>
 	<key>IDESourceControlProjectVersion</key>
 	<integer>110</integer>
 	<key>IDESourceControlProjectWCCIdentifier</key>
-	<string>2E0FA84C-F663-45F8-A063-1FF345353ED7</string>
+	<string>09352632-5CD9-435F-B135-8420CB7F932A</string>
 	<key>IDESourceControlProjectWCConfigurations</key>
 	<array>
 		<dict>
 			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
 			<string>public.vcs.git</string>
 			<key>IDESourceControlWCCIdentifierKey</key>
-			<string>2E0FA84C-F663-45F8-A063-1FF345353ED7</string>
+			<string>09352632-5CD9-435F-B135-8420CB7F932A</string>
 			<key>IDESourceControlWCCName</key>
 			<string>LANscapes</string>
 		</dict>
