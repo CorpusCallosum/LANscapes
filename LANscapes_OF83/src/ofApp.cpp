@@ -39,7 +39,7 @@ void ofApp::setup(){
     gui.mirrorH = XML.getValue("group:mirror_horizontally", false);
     
     gui.setUpSpeed(XML.getValue("group:soundUpSpeed", .00000001));
-    gui.setDownSpeed(XML.getValue("group:soundDownSpeed", .001));
+    gui.setDownSpeed(XML.getValue("group:soundDownSpeed", .003));
    // saveHour = ofToInt(XML.getValue("group:save_hour", "18"));
     
     //Set this to FALSE to use webcam
