@@ -26,7 +26,7 @@ void soundCalculations::setup( int w, int h, int which, int n, float u, float d 
         soundCenter[ 1 ].set( 340.0, 600.0 );
         soundCenter[ 2 ].set( 540.0, 100.0 );
 
-        soundRadius[ 0 ] = 383;
+        soundRadius[ 0 ] = 450;
         soundRadius[ 1 ] = 306;
         soundRadius[ 2 ] = 456;
     }

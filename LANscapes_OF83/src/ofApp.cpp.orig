@@ -134,7 +134,11 @@ void ofApp::setup(){
     //sound setup
     //soundCalculations.setup( width, height );
     
+<<<<<<< HEAD
     whichOne = 1; //1 is north, 2 is south
+=======
+    whichOne = 2;
+>>>>>>> FETCH_HEAD
     numSounds = 3;
     volume.resize( numSounds );
     pan.resize( numSounds );
@@ -163,6 +167,10 @@ void ofApp::setup(){
         corners[ 9 ].set( 0.0, 1280.0 ); //bottom left
         corners[ 10 ].set( 0.0, 1079.0 );
         corners[ 11].set( 0.0, 176.0 );
+<<<<<<< HEAD
+        
+=======
+>>>>>>> FETCH_HEAD
     }
     
     if ( whichOne == 2 ) { //south
@@ -485,20 +493,43 @@ void ofApp::keyPressed(int key){
             
         case 'l':
             //save the mesh and color data
+<<<<<<< HEAD
+            corners[ 1 ].x ++;
+            mask[ 3 ].update( corners[ 0 ], corners[ 1 ], corners[ 8 ], corners[ 9 ] );
+            cout << "1 x: " << corners[ 1 ].x << endl;
+=======
             corners[ 10 ].y ++;
             mask[ 2 ].setup( corners[ 10 ], corners[ 5 ], corners[ 6 ], corners[ 9 ] );
             cout << "10 y: " << corners[ 10 ].y << endl;
+>>>>>>> FETCH_HEAD
 			break;
             
         case 'j':
             //save the mesh and color data
+<<<<<<< HEAD
+            corners[ 1 ].x --;
+            mask[ 3 ].update( corners[ 0 ], corners[ 1 ], corners[ 8 ], corners[ 9 ] );
+            cout << "1 x: " << corners[ 1 ].x << endl;
+=======
             corners[ 10 ].y --;
            mask[ 2 ].setup( corners[ 10 ], corners[ 5 ], corners[ 6 ], corners[ 9 ] );
             cout << "10 y: " << corners[ 10 ].y << endl;
+>>>>>>> FETCH_HEAD
 			break;
             
         case 'i':
             //save the mesh and color data
+<<<<<<< HEAD
+            corners[ 8 ].x ++;
+            mask[ 3 ].update( corners[ 0 ], corners[ 1 ], corners[ 8 ], corners[ 9 ] );
+            cout << "8 x: " << corners[ 8 ].x << endl;            break;
+            
+        case 'm':
+            //save the mesh and color data
+            corners[ 8 ].x --;
+            mask[ 3 ].update( corners[ 0 ], corners[ 1 ], corners[ 8 ], corners[ 9 ] );
+            cout << "8 x: " << corners[ 8 ].x << endl;
+=======
             corners[ 5 ].y ++;
             mask[ 2 ].setup( corners[ 10 ], corners[ 5 ], corners[ 6 ], corners[ 9 ] );
             cout << "5 y: " << corners[ 5 ].y << endl;
@@ -509,6 +540,7 @@ void ofApp::keyPressed(int key){
             corners[ 5 ].y --;
             mask[ 2 ].setup( corners[ 10 ], corners[ 5 ], corners[ 6 ], corners[ 9 ] );
             cout << "5 y: " << corners[ 5 ].y << endl;
+>>>>>>> FETCH_HEAD
 			break;
             
 	}
