@@ -155,8 +155,8 @@ void ofApp::setup(){
         corners[ 1 ].set( 147.0, 0.0 );
         corners[ 2 ].set( 660.0, 0.0 );
         corners[ 3 ].set( 800.0, 0.0 ); //top right
-        corners[ 4 ].set( 800.0, 210.0 );
-        corners[ 5 ].set( 800.0, 1080.0 );
+        corners[ 4 ].set( 800.0, 195.0 );
+        corners[ 5 ].set( 800.0, 1084.0 );
         corners[ 6 ].set( 800.0, 1280.0 ); //bottom right
         corners[ 7 ].set( 660.0, 1280.0 );
         corners[ 8 ].set( 147.0, 1280.0 );
