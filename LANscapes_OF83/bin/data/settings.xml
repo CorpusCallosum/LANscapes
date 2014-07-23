@@ -20,7 +20,7 @@
 	<soundUpSpeed>3.16e-08</soundUpSpeed>
 	<soundDownSpeed>0.0035</soundDownSpeed>
 	<save_times>
-		<hour>10</hour>
+		<hour>22</hour>
 		<hour>6</hour>
 	</save_times>
 <group/>
