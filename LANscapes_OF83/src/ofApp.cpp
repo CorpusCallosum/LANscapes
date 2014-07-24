@@ -134,7 +134,7 @@ void ofApp::setup(){
     //sound setup
     //soundCalculations.setup( width, height );
     
-    whichOne = 1; //1 is north, 2 is south
+    whichOne = 2; //1 is north, 2 is south
     numSounds = 3;
     volume.resize( numSounds );
     pan.resize( numSounds );
