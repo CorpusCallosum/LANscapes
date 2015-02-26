@@ -134,7 +134,7 @@ void ofApp::setup(){
     //sound setup
     //soundCalculations.setup( width, height );
     
-    whichOne = 2; //1 is north, 2 is south
+    whichOne = 1; //1 is north, 2 is south
     numSounds = 3;
     volume.resize( numSounds );
     pan.resize( numSounds );
@@ -152,17 +152,17 @@ void ofApp::setup(){
         sound[ 2 ]->loadSound( "sounds/bio_6_30.aiff" );
         
         corners[ 0 ].set( 0.0, 0.0 ); //top left
-        corners[ 1 ].set( 120.0, 0.0 );
-        corners[ 2 ].set( 743.0, 0.0 );
-        corners[ 3 ].set( 800.0, 0.0 ); //top right
-        corners[ 4 ].set( 800.0, 195.0 );
-        corners[ 5 ].set( 800.0, 1084.0 );
-        corners[ 6 ].set( 800.0, 1280.0 ); //bottom right
-        corners[ 7 ].set( 717.0, 1280.0 );
-        corners[ 8 ].set( 94.0, 1280.0 );
-        corners[ 9 ].set( 0.0, 1280.0 ); //bottom left
-        corners[ 10 ].set( 0.0, 1079.0 );
-        corners[ 11].set( 0.0, 176.0 );
+        corners[ 1 ].set( 183.0, 0.0 );
+        corners[ 2 ].set( 1048.0, 0.0 );
+        corners[ 3 ].set( 1280.0, 0.0 ); //top right
+        corners[ 4 ].set( 1280.0, 0.0 );
+        corners[ 5 ].set( 1280.0, 800.0 );
+        corners[ 6 ].set( 1280.0, 800.0 ); //bottom right
+        corners[ 7 ].set( 999.0, 800.0 );
+        corners[ 8 ].set( 186.0, 800.0 );
+        corners[ 9 ].set( 0.0, 800.0 ); //bottom left
+        corners[ 10 ].set( 0.0, 800.0 );
+        corners[ 11].set( 0.0, 0.0 );
     }
     
     if ( whichOne == 2 ) { //south
@@ -175,18 +175,17 @@ void ofApp::setup(){
         sound[ 2 ]->loadSound( "sounds/bio_6_30.aiff" );
         
         corners[ 0 ].set( 0.0, 0.0 ); //top left
-        corners[ 1 ].set( 147.0, 0.0 );
-        corners[ 2 ].set( 748.0, 0.0 );
-        corners[ 3 ].set( 800.0, 0.0 ); //top right
-        corners[ 4 ].set( 800.0, 197.0 );
-        corners[ 5 ].set( 800.0, 1061.0 );
-        corners[ 6 ].set( 800.0, 1280.0 ); //bottom right
-        corners[ 7 ].set( 752.0, 1280.0 );
-        corners[ 8 ].set( 147.0, 1280.0 );
-        corners[ 9 ].set( 0.0, 1280.0 ); //bottom left
-        corners[ 10 ].set( 0.0, 1062.0 );
-        corners[ 11].set( 0.0, 193.0 );
-        
+        corners[ 1 ].set( 183.0, 0.0 );
+        corners[ 2 ].set( 1048.0, 0.0 );
+        corners[ 3 ].set( 1280.0, 0.0 ); //top right
+        corners[ 4 ].set( 1280.0, 0.0 );
+        corners[ 5 ].set( 1280.0, 800.0 );
+        corners[ 6 ].set( 1280.0, 800.0 ); //bottom right
+        corners[ 7 ].set( 999.0, 800.0 );
+        corners[ 8 ].set( 186.0, 800.0 );
+        corners[ 9 ].set( 0.0, 800.0 ); //bottom left
+        corners[ 10 ].set( 0.0, 800.0 );
+        corners[ 11].set( 0.0, 0.0 );
     }
     
     
@@ -300,8 +299,8 @@ void ofApp::update(){
     mainMesh.xOffset = gui.getxOffset();
     
     //update sound soundCalculations is updated through processImage, so we pass volumes through
-    volume = processImage.getVolume();
-    pan = processImage.getPan();
+    //volume = processImage.getVolume();
+    //pan = processImage.getPan();
     
     
     
@@ -485,30 +484,30 @@ void ofApp::keyPressed(int key){
             
         case 'l':
             //save the mesh and color data
-            corners[ 10 ].y ++;
-            mask[ 2 ].setup( corners[ 10 ], corners[ 5 ], corners[ 6 ], corners[ 9 ] );
-            cout << "10 y: " << corners[ 10 ].y << endl;
+            corners[ 2 ].x ++;
+            mask[ 1 ].setup( corners[ 2 ], corners[ 3 ], corners[ 6 ], corners[ 7 ] );
+            cout << "2 x: " << corners[ 2 ].x << endl;
 			break;
             
         case 'j':
             //save the mesh and color data
-            corners[ 10 ].y --;
-           mask[ 2 ].setup( corners[ 10 ], corners[ 5 ], corners[ 6 ], corners[ 9 ] );
-            cout << "10 y: " << corners[ 10 ].y << endl;
+            corners[ 2 ].x --;
+           mask[ 1 ].setup( corners[ 2 ], corners[ 3 ], corners[ 6 ], corners[ 7 ] );
+            cout << "2 x: " << corners[ 2 ].x << endl;
 			break;
             
         case 'i':
             //save the mesh and color data
-            corners[ 5 ].y ++;
-            mask[ 2 ].setup( corners[ 10 ], corners[ 5 ], corners[ 6 ], corners[ 9 ] );
-            cout << "5 y: " << corners[ 5 ].y << endl;
+            corners[ 7 ].x ++;
+           mask[ 1 ].setup( corners[ 2 ], corners[ 3 ], corners[ 6 ], corners[ 7 ] );
+            cout << "7 x: " << corners[ 7 ].x << endl;
 			break;
             
         case 'm':
             //save the mesh and color data
-            corners[ 5 ].y --;
-            mask[ 2 ].setup( corners[ 10 ], corners[ 5 ], corners[ 6 ], corners[ 9 ] );
-            cout << "5 y: " << corners[ 5 ].y << endl;
+            corners[ 7 ].x --;
+            mask[ 1 ].setup( corners[ 2 ], corners[ 3 ], corners[ 6 ], corners[ 7 ] );
+            cout << "7 x: " << corners[ 7 ].x << endl;
 			break;
             
 	}

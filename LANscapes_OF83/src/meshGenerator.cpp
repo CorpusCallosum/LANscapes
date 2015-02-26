@@ -16,7 +16,7 @@ void meshGenerator::setup( int w, int h, float extrusion, bool wireframe, bool f
     xOffset=0;
     zOffset = -4;
     yOffset = -23;
-    minNoise = 202;
+    minNoise = 220;
     
     colorGrid.resize( width * height );
     
