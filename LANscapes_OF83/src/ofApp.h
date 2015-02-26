@@ -19,6 +19,7 @@ public:
     void update();
     void draw();
     void keyPressed( int );
+    void mouseMoved(int x, int y);
     void saveXML();
     
     

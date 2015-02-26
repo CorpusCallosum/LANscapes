@@ -3,6 +3,7 @@
 //--------------------------------------------------------------
 void ofApp::setup(){
     
+    
     //load settings xml data file
     //-----------
 	//the string is printed at the top of the app
@@ -207,6 +208,8 @@ void ofApp::setup(){
     mask[ 3 ].setup( corners[ 0 ], corners[ 1 ], corners[ 8 ], corners[ 9 ] );
     
     processImage.setup( width, height, 10, 10, modifiedImage, whichOne, numSounds,soundUpSpeed, soundDownSpeed ); // (width, height, low threshold for movement, flicker);
+    
+    ofHideCursor();
     
 }
 
@@ -442,9 +445,11 @@ void ofApp::keyPressed(int key){
         case 'g':
             if(gui.hidden){
                 gui.show();
+                ofShowCursor();
             }
             else{
                 gui.hide();
+                ofHideCursor();
             }
             break;
             
@@ -512,4 +517,13 @@ void ofApp::keyPressed(int key){
             
 	}
     
+}
+
+void ofApp::mouseMoved(int x, int y){
+    if(gui.hidden){
+        ofHideCursor();
+    }
+    else{
+        ofShowCursor();
+    }
 }
