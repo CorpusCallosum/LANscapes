@@ -10,16 +10,16 @@
 	<string>LANscapes_OF83</string>
 	<key>IDESourceControlProjectOriginsDictionary</key>
 	<dict>
-		<key>92B4EF66-4238-40A5-87C9-34E139DF4B2A</key>
+		<key>BD98F9B29CFEDADD4D4160A1B4C997543A66B38A</key>
 		<string>https://github.com/CorpusCallosum/LANscapes.git</string>
 		<key>E4A194B8-5EBA-49E4-BD0C-90021CD0E9D2</key>
 		<string>https://github.com/toolbits/ofxWatchdog.git</string>
 	</dict>
 	<key>IDESourceControlProjectPath</key>
-	<string>LANscapes_OF83/LANscapes_OF83.xcodeproj/project.xcworkspace</string>
+	<string>LANscapes_OF83/LANscapes_OF83.xcodeproj</string>
 	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
 	<dict>
-		<key>92B4EF66-4238-40A5-87C9-34E139DF4B2A</key>
+		<key>BD98F9B29CFEDADD4D4160A1B4C997543A66B38A</key>
 		<string>../../..</string>
 		<key>E4A194B8-5EBA-49E4-BD0C-90021CD0E9D2</key>
 		<string>../../../../../addons/ofxWatchdog</string>
@@ -27,16 +27,16 @@
 	<key>IDESourceControlProjectURL</key>
 	<string>https://github.com/CorpusCallosum/LANscapes.git</string>
 	<key>IDESourceControlProjectVersion</key>
-	<integer>110</integer>
+	<integer>111</integer>
 	<key>IDESourceControlProjectWCCIdentifier</key>
-	<string>92B4EF66-4238-40A5-87C9-34E139DF4B2A</string>
+	<string>BD98F9B29CFEDADD4D4160A1B4C997543A66B38A</string>
 	<key>IDESourceControlProjectWCConfigurations</key>
 	<array>
 		<dict>
 			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
 			<string>public.vcs.git</string>
 			<key>IDESourceControlWCCIdentifierKey</key>
-			<string>92B4EF66-4238-40A5-87C9-34E139DF4B2A</string>
+			<string>BD98F9B29CFEDADD4D4160A1B4C997543A66B38A</string>
 			<key>IDESourceControlWCCName</key>
 			<string>LANscapes</string>
 		</dict>
